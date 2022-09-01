@@ -1,0 +1,95 @@
+.header {
+  width: 100%;
+  height: 90vh;
+  background-image: linear-gradient(
+      to left bottom,
+      $color-primary-light,
+      $color-primary-dark
+    ),
+    url(/imgCars/brandon-atchison-ndrjunfmqwY-unsplash.jpg) !important;
+  background-size: cover;
+  background-position: left;
+  clip-path: polygon(20% 0%, 80% 0%, 100% 0, 100% 82%, 50% 98%, 0 82%, 0 0);
+
+  &__content {
+    position: relative;
+    top: 35%;
+    transform: translate(0, -50%);
+    width: 50%;
+    margin-left: 15rem;
+
+    &__heading {
+      font-size: 4rem;
+      text-transform: capitalize;
+      color: $white-color;
+      margin-bottom: 2rem;
+      animation: leftLarge 2s;
+      width: 70%;
+      line-height: 6rem;
+
+      span {
+        font-weight: 900;
+      }
+    }
+
+    &__para {
+      color: $white-color;
+      font-size: 1.8rem;
+      line-height: 2.8rem;
+      margin-bottom: 2rem;
+      width: 60%;
+      animation: leftSmall 2.5s;
+      position: relative;
+    }
+  }
+  .btn {
+    &:visited,
+    &:link {
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 15px 40px;
+      display: inline-block;
+      border-radius: 100px;
+      position: relative;
+      background-color: $white-color;
+      font-size: 1.5rem;
+      color: $icon-color;
+      font-weight: 700;
+    }
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    &:active {
+      transform: translateY(-1px);
+      box-shadow: 0 50px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    &::after {
+      content: "";
+      display: inline-block;
+      height: 100%;
+      width: 100%;
+      border-radius: 100px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      transition: all 0.6s;
+    }
+
+    &:hover::after {
+      transform: scale(1.4) scaleY(1);
+      opacity: 0;
+    }
+  }
+  .btn-white::after {
+    background-color: $white-color;
+  }
+
+  .btn-animated {
+    animation: moveBottom 2s;
+  }
+}
